@@ -1,14 +1,32 @@
 # Setup
 
 ## Technical Concept
-![](/home/jeremy/Dokumente/1 University/Master/MA/hardware/concept.jpg)
+![](./concept.jpg)
 
 
 
 ## Stardot Cameras
 
+### Getting Started
+1. Identify IP by typing `cat /var/lib/misc/dnsmasq.leases`
+2. Access `10.42.0.64` (netcamsc) via browser
+3. Click `config`. Password admin.
+4. Choose Preset: `traffic observation`
+
+
+### Image optimization
+1. Hardware Focus: To focus the camera loosen the screw on top of lense, then gently turn the very first bit of the lense (not the ring with screw on). Turn left for close objects, right for far.  
+2. Select Resolution and JPEG Quality  
+![Screenshot](./stardot/stardot_image-configuration.png)  
+3. Select Exposure Grid ![Screenshot](./stardot/stardot_image-exposuregrid.png)  
+
+
 ### FTP Upload
 How/where to upload images to. Kameras stehen im Gelände, ohn OPENVP.
+
+### Wget current image
+`wget -O now.jpg http://10.42.0.64/nph-jpeg.cgi`
+
 
 
 
