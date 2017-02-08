@@ -9,7 +9,9 @@ I don't have an external screen and get started using SSH only..
 
 
 ## **Fix IP Adress**
+https://www.elektronik-kompendium.de/sites/raspberry-pi/1912151.htm
 
+Raspberry 1 IP:`192.168.10.1`
 
 ## FTP Server
 > FTP (File Transfer Protocol) can be used to transfer files between a Raspberry Pi and another computer. Although with default program sftp-server of Raspbian the users with sufficient privilege can transfer files or directories, access to the filesystem of the limited users is also required often. Follow the steps below to set up an FTP server.  

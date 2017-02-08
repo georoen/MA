@@ -4,12 +4,12 @@
 #' Opt-In crontab
 
 
-
 # Init API
 keyfile <- "./tools/twitter_credentials.R"
 source(keyfile)
 
 library(twitteR)
+print(Sys.time())  # Log timestamp in strout
 setup_twitter_oauth(consumer_key, consumer_secret, access_token, access_secret)
 
 
