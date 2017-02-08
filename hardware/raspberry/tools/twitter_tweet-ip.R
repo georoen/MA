@@ -22,13 +22,19 @@ system <- function(...)
 ## Where am I ?
 hostname <- system("cat /etc/hostname")
 ## Time
-#Debug error 403: Tweets have to be unique. https://github.com/geoffjentry/twitteR/issues/62
-time <- Sys.time()
+time <- format(Sys.time(), "%j%H%M")
 ## Connection 
-ip <- system("ip route get 8.8.8.8")  # IP-Adress
-ip <- strsplit(ip, " ")[[1]][c(3,5,8)]
+ip <- system("hostname -I")  # IP-Adress
+print(ip)
 
 
-# Tweet 🚀
-msg <- paste(hostname, ":", time, ip)  
-tweet(msg)
+# Tweet
+msg <- paste0(hostname, "\n", ip)  
+
+check <- try(tweet(msg))
+if(class(check) == "try-error"){
+  # Debug error 403 try again
+  # Tweets have to be unique. https://github.com/geoffjentry/twitteR/issues/62
+  msg <- paste0(msg, "\n", time)
+  tweet(msg)
+}
