@@ -18,3 +18,5 @@ Manage [CRON](https://wiki.ubuntuusers.de/Cron/) schedule with `crontab -e`. I s
 `@reboot Rscript ~/tools/twitter_tweet-ip.R`  
 `* * * * * Rscript ~/tools/twitter_tweet-ip.R`  
 
+#### Troubleshoot
+Returns error 403: Tweets can not be equal.
