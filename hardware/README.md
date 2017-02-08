@@ -9,27 +9,15 @@
 
 
 
-
 ## [Setup 1](./setup1.md)
-Kameras stehen im Gelände, ohne OPENVP.
+Camera with internet in field. Raspberry processing images remotely.
 
-**TODO: Use realtimeclock + make timeserver for stardo**
+**TODO: Upload from Stardot into University without VPN.**
 
 
-## Setup 2
-As discussed with Johannes Schamel, Manuel Engelbauer and Niklas Scheder on 2.2.2016 internet is not always available in the field. They prefer an autoneus setup storing images locally. The setup should depend only on energy supply. The researchers would go into the field to collect the data.  
+## [Setup 2 (Active)](./setup2.md)
+Autonomos setup without internet. Camera and raspberry in case, powersupply only.
 
-**Therefore we need a RTC for RasPi!!**
+**TODO: Use realtimeclock + make timeserver for Stardot**
 
-### Technical Concept
-![](./setup2_concept.jpg)
-
-1. Connect RasPi w. Stardot via LAN
-2. Fix IP?
-3. PortForwarding 
-
-**Use RasPi as timeserver for Stardot**
-
-### Wget current image
-`wget -O now.jpg http://10.42.0.64/nph-jpeg.cgi`1
-
+**Powersupply: 230V, 12V or PoE?**
