@@ -29,3 +29,7 @@ Installed Version: 3.3.2
 **Install R-packages as root in case multiple users will access RasPi**
 
 Change workingdirectory to `/hardware/raspberry` when developing code.  
+
+
+### [Twitterbot](./tools/twitterbot.md)
+Receive status updates via Twitter.
