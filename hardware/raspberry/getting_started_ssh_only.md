@@ -14,6 +14,7 @@ Here we downloaded the latest [*Raspbian Jessie Lite*](https://www.raspberrypi.o
 > For headless setup, SSH can be enabled by placing a file named 'ssh', without any extension, onto the boot partition of the SD card.
 > -- https://www.raspberrypi.org/documentation/remote-access/ssh/
 
+**`ssh pi@raspberrypi.local` should work](https://unix.stackexchange.com/questions/16890/how-to-make-a-machine-accessible-from-the-lan-using-its-hostname)**
 
 ## First boot, connected via cable
 **No access to router:**Connect Raspberry via Ethernet-cable directly to Ubuntu laptop.
@@ -49,7 +50,11 @@ Because next want to remove the Ethernet cable, we have to connect the RasPi wit
 3. `sudo reboot`
 4. Reconnect using Ethernet-IP to see if wifi works by tpying: `ifconfig wlan0` and checking the `inet addr` field.
 
+## Passwordless SSH access
+> It is possible to configure your Pi to allow your computer to access it without providing a password each time you try to connect. To do this you need to generate an SSH key.  
+> --[raspberrypi.org](https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md)  
 
+Use this keys for github ;-)
 
 ## Duplicate SD-Image
 Identical configuration for both RasPis...  

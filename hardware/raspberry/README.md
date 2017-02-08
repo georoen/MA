@@ -15,7 +15,6 @@ I don't have an external screen and get started using SSH only..
 https://raspberry.tips/server-2/raspberry-pi-als-ftp-server-betreiben/
 
 
-
 ## R
 
 [Install R on RaspberryPi 3](http://raspberrypi.stackexchange.com/a/55216)

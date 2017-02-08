@@ -4,7 +4,7 @@
 ### TwitterBot
 The 21st century is the age of IoT. Here I use a twitter bot to get updated about the raspberrys status.  
 
-![**.gitignore**](../../../text/figure/Twitterbot.jpg)
+![**.gitignore**](../../../Twitterbot.jpg)
 
 #### Preperation
 First a new [Twitter-Account](https://support.twitter.com/articles/334631#) was created. It is protected so just accepeted followers can read its tweets.  

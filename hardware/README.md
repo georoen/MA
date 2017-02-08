@@ -12,7 +12,7 @@
 ## [Setup 1](./setup1.md)
 Camera with internet in field. Raspberry processing images remotely.
 
-**TODO: Upload from Stardot into University without VPN.**
+**Mit Simon: Upload from Stardot into University without VPN.**
 
 
 ## [Setup 2 (Active)](./setup2.md)
