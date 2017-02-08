@@ -22,3 +22,4 @@ Camera with internet in field. Raspberry processing images remotely.
 Autonomos setup without internet. Camera and raspberry in case, powersupply only.  
 **TODO: Use realtimeclock + make timeserver for Stardot**  
 **Powersupply: 230V, 12V or PoE?**
+**[Platzsparendes LAN Kabel](https://www.conrad.de/de/rj45-netzwerk-anschlusskabel-cat-5e-sftp-050-m-grau-delock-1298118.html) 1:1 verdahtet?**

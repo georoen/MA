@@ -47,6 +47,12 @@ Because next want to remove the Ethernet cable, we have to connect the RasPi wit
 
 1. scan available networks: `sudo iwlist wlan0 scan`
 2. Append the network to the `wpa-supplicant` configuration file in nano: `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`. 
+``
+network={  
+    ssid="testing"  
+    psk="testingPassword"  
+}  
+``
 3. `sudo reboot`
 4. Reconnect using Ethernet-IP to see if wifi works by tpying: `ifconfig wlan0` and checking the `inet addr` field.
 
