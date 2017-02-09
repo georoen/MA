@@ -14,9 +14,14 @@ Here we downloaded the latest [*Raspbian Jessie Lite*](https://www.raspberrypi.o
 > For headless setup, SSH can be enabled by placing a file named 'ssh', without any extension, onto the boot partition of the SD card.
 > -- https://www.raspberrypi.org/documentation/remote-access/ssh/
 
-**`ssh pi@raspberrypi.local` should work](https://unix.stackexchange.com/questions/16890/how-to-make-a-machine-accessible-from-the-lan-using-its-hostname)**
 
-## First boot, connected via cable
+## First boot
+### connect via router (DCHP)
+See [how to use hostnames](https://unix.stackexchange.com/questions/16890/how-to-make-a-machine-accessible-from-the-lan-using-its-hostname)  
+`ssh pi@raspberrypi.local` 
+
+
+### connected via cable
 **No access to router:**Connect Raspberry via Ethernet-cable directly to Ubuntu laptop.
 Find out it's IP-Adress following [this guide](http://raspberrypi.stackexchange.com/a/61004):
 
@@ -25,7 +30,7 @@ Find out it's IP-Adress following [this guide](http://raspberrypi.stackexchange.
 4. Open terminal and type: `cat /var/lib/misc/dnsmasq.leases`. You will get raspberry pi Ip from that.
 5. Then connect typing: `ssh pi@[ip-adress]`
 
-### Initial configuration
+## Initial configuration
 For initial configurations open the [Raspberry Pi configuration tool](https://www.raspberrypi.org/documentation/configuration/raspi-config.md) as superuser: `sudo raspi-config`.  
 
 ### Password
@@ -43,7 +48,7 @@ As seen with the failed Telekom-Hack the internet-of-things is tageted  by botne
 
 
 ## Add to WIFI
-Because next want to remove the Ethernet cable, we have to connect the RasPi with our local wifi, following [this documentation](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md).
+Next connect the RasPi to our local wifi, following [this documentation](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md). Than remove the ethernet cable.
 
 1. scan available networks: `sudo iwlist wlan0 scan`
 2. Append the network to the `wpa-supplicant` configuration file in nano: `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`. 
@@ -76,3 +81,34 @@ The images also specify the disc size. To make the rest of the 64GB available fo
 4. `reboot`
 
 **TODO: Change hostname raspberrypi**
+
+## VNC
+Installation
+```
+sudo raspi-config
+select Advanced Options
+select VNC
+
+sudo apt-get install tightvncserver
+tightvncserver
+```
+
+CRON
+`@reboot tightvncserver:1`
+
+
+## Fix IP
+```
+sudo nano /etc/network/interfaces
+
+ auto eth0
+ iface eth0 inet static
+ #your static IP
+ address 192.168.10.118
+ #your gateway IP
+ gateway 192.168.10.1
+ netmask 255.255.255.0
+ #your network address "family"
+ network 192.168.10.0
+ broadcast 192.168.10.255
+```
