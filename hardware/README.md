@@ -13,7 +13,7 @@
 **TODO: Port Forwaring for camers**
 
 
-## [Setup 1](./1_setup/setup1.md)
+## [Setup 1](./1_setup/README.md)
 Camera with internet in field. Raspberry processing images remotely.  
 **Mit Simon: Upload from Stardot into University without VPN.**
 
