@@ -21,6 +21,7 @@ iface eth0 inet static
 ### Push via FTP
 Currently the Stardot is on `10.42.0.54`. Connecting via vnc works. Configure and test FTP:
 ![Screenshot](stardot_ftp.jpg)
+
 ### Pull via `wget`
 Current image at static adress.  
 `wget -O now.jpg http://10.42.0.64/nph-jpeg.cgi`
