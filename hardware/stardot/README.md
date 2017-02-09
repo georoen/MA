@@ -21,7 +21,7 @@ Was `10.42.0.64` since initialisation.
 See Handbook.
 
 ### FTP
-See [Setup 2](../2_setup/setup2.md)  
+See [Setup 2](../2_setup/README.md)  
 ![Screenshot](../2_setup/stardot_ftp.jpg)
 
 
