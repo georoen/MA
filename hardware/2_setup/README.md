@@ -6,16 +6,25 @@ As discussed with Johannes Schamel, Manuel Engelbauer and Niklas Scheder on 2.2.
 ## Technical Concept
 ![](./setup2_concept.jpg)
 
-## Fix Ip for Raspberry
-At the begin I struggeld with the static IP, but after reading [this wiki](https://wiki.ubuntuusers.de/interfaces/#Statische-IP-Konfiguration) everything works, incl. FTP. This is how to configure `/etc/network/interfaces` eth0 part:  
-```
-auto eth0
-allow-hotplug eth0
-iface eth0 inet static
-    address 10.42.0.10   
-    netmask 255.255.255.0  
-    gateway 10.42.0.1
-```
+IP Adresses:
+Stardot: 10.42.0.64
+Raspberry: 10.42.0.10
+
+
+
+## VNC (Virtual Network Computing)
+To access the camera in the field, *VNC* can be used:
+
+> VNC is a graphical desktop sharing system that allows you to remotely control the desktop interface of one computer from another computer or mobile device. It transmits the keyboard and mouse, or touch, events from the controller, and receives updates to the screen over the network from the remote host.  
+> You will see the desktop of the Raspberry Pi inside a window on your computer or mobile device. You'll be able to control it as though you were working on the Raspberry Pi itself.
+![Img link to raspberrypi.org](https://www.raspberrypi.org/documentation/remote-access/vnc/images/raspberry-pi-connect.png)
+> --[raspberrypi.org](https://www.raspberrypi.org/documentation/remote-access/vnc/)
+
+Enable VNC Server using `sudo raspi-config`, Navigate to **Interfacing Options**. Scroll down and select **VNC > Yes**.
+
+**TODO: Try `vncserver` (without installing tightvncserver)**
+
+
 
 ## Data Transfer
 ### Push via FTP

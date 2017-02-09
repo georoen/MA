@@ -3,15 +3,23 @@
 > -- [Official RaspberryPi website](www.raspberrypi.org/)
 
 
-## [Getting started](./getting_started_ssh_only.md)
+## [Getting started SSH](./getting_started_ssh_only.md)
 **Getting Started with SSH only**  
 I don't have an external screen and get started using SSH only..  
 
 
-## **Fix IP Adress**
-https://www.elektronik-kompendium.de/sites/raspberry-pi/1912151.htm
 
-Raspberry 1 IP:`192.168.10.1`
+## Fix Ip for Raspberry
+At the begin I struggeld with the static IP, but after reading [this wiki](https://wiki.ubuntuusers.de/interfaces/#Statische-IP-Konfiguration) everything works, incl. FTP. This is how to configure `/etc/network/interfaces` eth0 part:  
+```
+auto eth0
+allow-hotplug eth0
+iface eth0 inet static
+    address 10.42.0.10   
+    netmask 255.255.255.0  
+    gateway 10.42.0.1
+```
+
 
 ## FTP Server
 > FTP (File Transfer Protocol) can be used to transfer files between a Raspberry Pi and another computer. Although with default program sftp-server of Raspbian the users with sufficient privilege can transfer files or directories, access to the filesystem of the limited users is also required often. Follow the steps below to set up an FTP server.  
@@ -31,7 +39,10 @@ sudo service pure-ftpd restart
 
 ```
 
-Via ubuntu `ftp://upload@raspberrypi.local` works.  
+FROM ubuntu TO `ftp://upload@raspberrypi.local` works.  
+FROM ubuntu TO `ftp://upload@10.42.0.10` works.  
+FROM stardot TO `ftp://upload@10.42.0.10` works.  
+
 
 ## R
 
