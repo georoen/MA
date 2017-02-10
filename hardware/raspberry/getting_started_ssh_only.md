@@ -1,25 +1,27 @@
-
-
-
-# Prepare SD-Card
-Download ISO-file from [here](https://www.raspberrypi.org/downloads/raspbian/) and write it to SD-Card.  
-
-
+# Getting started
 ## Operating System
-*Raspbian* is a free operating system optimized for the Raspberry Pi hardware. This *Debian* based *Linux* is has a big online community, is well tested and thousands available packages using *apt*.  
-Here we downloaded the latest [*Raspbian Jessie Lite*](https://www.raspberrypi.org/downloads/raspbian/), released on 11th January 2017 with kernel version 4.4. I choose the lite version without the *PIXEL desktop* to save unnecessary disk space for archiving images. After writing the iso-image on the SD-Card using [Ubuntu's USB-Creator](https://wiki.ubuntuusers.de/Live-USB/#USB-Creator-Startmedienersteller).  
+Here we downloaded the latest [*Raspbian Jessie Lite*](https://www.raspberrypi.org/downloads/raspbian/), released on 11th January 2017 with kernel version 4.4. I choose the lite version without the *PIXEL desktop* to save unnecessary disk space for archiving images.  
+> *Raspbian* is a free operating system optimized for the Raspberry Pi hardware. This *Debian* based *Linux* is has a big online community, is well tested and thousands available packages using *apt*.  
 
 
-## Enable SSH
+
+## Prepare SD-Card
+### Write Raspbian image to card
+Write the iso-image on the SD-Card using [Ubuntu's USB-Creator](https://wiki.ubuntuusers.de/Live-USB/#USB-Creator-Startmedienersteller). 
+
+### Partitions
+[Partition SD Card](backing_up_sdcard_images)
+
+### Enable SSH
 > For headless setup, SSH can be enabled by placing a file named 'ssh', without any extension, onto the boot partition of the SD card.
 > -- https://www.raspberrypi.org/documentation/remote-access/ssh/
+
 
 
 ## First boot
 ### connect via router (DCHP)
 See [how to use hostnames](https://unix.stackexchange.com/questions/16890/how-to-make-a-machine-accessible-from-the-lan-using-its-hostname)  
 `ssh pi@raspberrypi.local` 
-
 
 ### connected via cable
 **No access to router:**Connect Raspberry via Ethernet-cable directly to Ubuntu laptop.
@@ -29,6 +31,8 @@ Find out it's IP-Adress following [this guide](http://raspberrypi.stackexchange.
 2. Go the edit connection setting. Navigate to ipv4 option. Select method : shared to other computer.
 4. Open terminal and type: `cat /var/lib/misc/dnsmasq.leases`. You will get raspberry pi Ip from that.
 5. Then connect typing: `ssh pi@[ip-adress]`
+
+
 
 ## Initial configuration
 For initial configurations open the [Raspberry Pi configuration tool](https://www.raspberrypi.org/documentation/configuration/raspi-config.md) as superuser: `sudo raspi-config`.  
@@ -65,7 +69,17 @@ network={
 > It is possible to configure your Pi to allow your computer to access it without providing a password each time you try to connect. To do this you need to generate an SSH key.  
 > --[raspberrypi.org](https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md)  
 
-Use this keys for github ;-)
+On Raspi-Side:
+```
+ssh-keykeg
+```
+
+From Laptop:  
+`cat ~/.ssh/id_rsa.pub | ssh pi@raspberrypi.local 'cat >> .ssh/authorized_keys'`
+
+TODO: Use raspi keys for pulling updates from privat github ;-)
+
+
 
 ## Duplicate SD-Image
 Identical configuration for both RasPis...  
@@ -81,34 +95,3 @@ The images also specify the disc size. To make the rest of the 64GB available fo
 4. `reboot`
 
 **TODO: Change hostname raspberrypi**
-
-## VNC
-Installation
-```
-sudo raspi-config
-select Advanced Options
-select VNC
-
-sudo apt-get install tightvncserver
-tightvncserver
-```
-
-CRON
-`@reboot tightvncserver:1`
-
-
-## Fix IP
-```
-sudo nano /etc/network/interfaces
-
- auto eth0
- iface eth0 inet static
- #your static IP
- address 192.168.10.118
- #your gateway IP
- gateway 192.168.10.1
- netmask 255.255.255.0
- #your network address "family"
- network 192.168.10.0
- broadcast 192.168.10.255
-```

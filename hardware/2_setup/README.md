@@ -12,18 +12,38 @@ Raspberry: 10.42.0.10
 
 
 
-## VNC (Virtual Network Computing)
+## How to access Stardot?
+### Portforwarding?
+**TODO**
+
+### VNC (Virtual Network Computing)
+**Only works with PIXEL Enviroment**  
 To access the camera in the field, *VNC* can be used:
 
 > VNC is a graphical desktop sharing system that allows you to remotely control the desktop interface of one computer from another computer or mobile device. It transmits the keyboard and mouse, or touch, events from the controller, and receives updates to the screen over the network from the remote host.  
-> You will see the desktop of the Raspberry Pi inside a window on your computer or mobile device. You'll be able to control it as though you were working on the Raspberry Pi itself.
-![Img link to raspberrypi.org](https://www.raspberrypi.org/documentation/remote-access/vnc/images/raspberry-pi-connect.png)
+> You will see the desktop of the Raspberry Pi inside a window on your computer or mobile device. You'll be able to control it as though you were working on the Raspberry Pi itself.  
+
+>![Img link to raspberrypi.org](https://www.raspberrypi.org/documentation/remote-access/vnc/images/raspberry-pi-connect.png)  
 > --[raspberrypi.org](https://www.raspberrypi.org/documentation/remote-access/vnc/)
 
-Enable VNC Server using `sudo raspi-config`, Navigate to **Interfacing Options**. Scroll down and select **VNC > Yes**.
+Enable VNC Server using `sudo raspi-config`, Navigate to **Advanced Options**. Scroll down and select **VNC > Yes**.  
 
-**TODO: Try `vncserver` (without installing tightvncserver)**
+Installation:  
+```
+sudo raspi-config
+select Advanced Options
+select VNC
 
+sudo apt-get install tightvncserver
+```
+
+Start VNC-session. When initial run set passwords here. Anser *Would you like to enter a view-only password (y/n)? * with `n`. Troubleshoot: Reset configuration by `rmdir ~/.vnc/`.
+```
+vncserver :1
+```
+
+CRON
+`@reboot tightvncserver:1`
 
 
 ## Data Transfer

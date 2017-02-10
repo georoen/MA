@@ -3,7 +3,7 @@
 > -- [Official RaspberryPi website](www.raspberrypi.org/)
 
 
-## [Getting started SSH](./getting_started_ssh_only.md)
+## [Getting started](./getting_started_ssh_only.md)
 **Getting Started with SSH only**  
 I don't have an external screen and get started using SSH only..  
 
@@ -25,24 +25,30 @@ iface eth0 inet static
 > FTP (File Transfer Protocol) can be used to transfer files between a Raspberry Pi and another computer. Although with default program sftp-server of Raspbian the users with sufficient privilege can transfer files or directories, access to the filesystem of the limited users is also required often. Follow the steps below to set up an FTP server.  
 > -- [raspberrypi.org](https://www.raspberrypi.org/documentation/remote-access/ftp.md)
 
+Run (line by line):  
 ```
 sudo apt-get install pure-ftpd
+
 groupadd ftpgroup
 sudo groupadd ftpgroup
 sudo useradd ftpuser -g ftpgroup -s /sbin/nologin -d /dev/null
 sudo mkdir /home/pi/FTP
 sudo chown -R ftpuser:ftpgroup /home/pi/FTP
 sudo pure-pw useradd upload -u ftpuser -g ftpgroup -d /home/pi/FTP -m
+
 sudo pure-pw mkdb
 sudo ln -s /etc/pure-ftpd/conf/PureDB /etc/pure-ftpd/auth/60puredb
 sudo service pure-ftpd restart
-
 ```
 
 FROM ubuntu TO `ftp://upload@raspberrypi.local` works.  
 FROM ubuntu TO `ftp://upload@10.42.0.10` works.  
 FROM stardot TO `ftp://upload@10.42.0.10` works.  
 
+
+
+## `.bashrc`
+[Customized bash](.bashrc), uncomment last line vor VNC at login.
 
 ## R
 
