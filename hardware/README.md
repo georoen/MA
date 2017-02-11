@@ -7,7 +7,7 @@
 Here we use two stardot webcameras. They are boradly used in eviromental outdoor sciences [@ Richardson, Harvard]. Temperature ranges from -40C° to +48C° are no problem [@ Stardot Handbook].  
 
 Works: FTP upload images to upload@raspberrypi.local via wlan0 from laptop.
-Works: FTP upload images to upload@10.42.0.10 via eth0 from stardot.
+Works: FTP upload images to upload@10.42.0.10 via eth0 from stardot.  
 **TODO: EURAC IR-configuration. See archiv.zip + speak Enrico+Abraham. How to ssh stardot?**  
 
 
