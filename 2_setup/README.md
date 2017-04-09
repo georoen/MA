@@ -55,5 +55,10 @@ Currently the Stardot is on `10.42.0.54`. Connecting via vnc works. Configure an
 Current image at static adress.  
 `wget -O now.jpg http://10.42.0.64/nph-jpeg.cgi`
 
-## ToDo 
-###Use RasPi-RTC as timeserver for Stardot
+## Timeserver 
+### Config Stardot
+Enter (Stardot Backend -> Date/Time](http://localhost:8080/admin.cgi?datetime) 
+and set to `Automatic` with Raspberry IP-Adress.  
+
+### TODO: Buy RasPi-RTC
+
