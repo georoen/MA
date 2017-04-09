@@ -60,5 +60,7 @@ Current image at static adress.
 Enter (Stardot Backend -> Date/Time](http://localhost:8080/admin.cgi?datetime) 
 and set to `Automatic` with Raspberry IP-Adress.  
 
-### TODO: Buy RasPi-RTC
-
+### TODO: RasPi-RTC
+Infos + Konfiguration. Hinweis zu Ersatzbaterien beachten: http://www.raspberry-pi-geek.de/Magazin/2015/03/Echtzeituhr-Modul-DS3231-sorgt-fuer-genaue-Zeitangaben  
+Konfiguration: http://raspberrypi.tomasgreno.cz/ntp-client-and-server.html  
+Amazon:  https://www.amazon.de/DIYMall-Raspberry-DS3231-Uhrzeit-Knopfzelle/dp/B0126GGFQI
