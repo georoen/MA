@@ -42,8 +42,5 @@ Works: Configure cameras by port forwaring to `localhost:8080` when connecting v
 Optional: [Platzsparendes LAN Kabel](https://www.conrad.de/de/rj45-netzwerk-anschlusskabel-cat-5e-sftp-050-m-grau-delock-1298118.html)? 1:1 verdahtet?
 
 **TODO: Use realtimeclock**  
-**TODO: Solve powersupply question: 230V, 12V or PoE?**  
-
-
-# Troubleshoot
-Reboot camera when working with ethernet cable.
+**TODO: Use Solar-Power** Strombedarf? Welche 12V und MicroUSB Traffos?  
+Verbraucht RaspiCam weniger Strom?
