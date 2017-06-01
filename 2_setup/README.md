@@ -4,7 +4,7 @@ As discussed with Johannes Schamel, Manuel Engelbauer and Niklas Scheder on 2.2.
 
 
 ## Technical Concept
-![](./setup2_concept.jpg)
+![Technical Concept of Setup 2](./setup2_concept.jpg)
 
 IP Adresses:  
 Stardot: 10.42.0.64  
@@ -36,14 +36,16 @@ The Stardot is comes with a full FTP client out of the box and pushes new images
 
 **Attention:** The monthly folders have to already exist on the server, they will not be created automaticlly. Also make sure the ftpuser has writing rigths. Otherwise no images will be stored at all!  
 
-![Screenshot](stardot_ftp.jpg)  
+![Screenshot FTP Configuration](stardot_ftp.jpg)  
 
 
 #### RaspberryPi
-As mentioned above it is obligatory to provide the monthly folder structure on the raspberrypi side. Therefore CRON [this script](../raspberry/CRON_Monthly-Folder-Structure.sh) every month (`@monthly ../raspberry/CRON_Monthly-Folder-Structure.sh`). It will `mkrdir ./YEAR/MONTH/` and permit `ftpuser` to write files in it.  
+As mentioned above it is obligatory to provide the monthly folder structure on the server side (raspberrypi). Therefore CRON [this script](../raspberry/CRON_Monthly-Folder-Structure.sh) every month (`@monthly sudo bash ../raspberry/CRON_Monthly-Folder-Structure.sh`). It will `mkrdir ./YEAR/MONTH/` and permit `ftpuser` to write files in it.  
 
 Note 8.5.17: Initial test (generate new folder `./2017/05/`) was not sucessfull. Runnig it from `sudo crontab` now.  
-**TODO beginn june:** Check and update this line.
+Note 16.5.17: Testing crontab interdaily - now works with `sudo bash ...`  
+Note 1.5.17: Monthly CRON worked  
+Idea: Can ftpuser also execute crontabs? - then no struggle with sudo permission?
 
 
 ### Timeserver
@@ -63,3 +65,24 @@ Enter [Stardot Backend -> Date/Time](http://localhost:8080/admin.cgi?datetime), 
 Infos + Konfiguration. Hinweis zu Ersatzbaterien beachten: http://www.raspberry-pi-geek.de/Magazin/2015/03/Echtzeituhr-Modul-DS3231-sorgt-fuer-genaue-Zeitangaben  
 Konfiguration: http://raspberrypi.tomasgreno.cz/ntp-client-and-server.html  
 Amazon:  https://www.amazon.de/DIYMall-Raspberry-DS3231-Uhrzeit-Knopfzelle/dp/B0126GGFQI
+
+
+## Powersupply
+In rought field conditions, with no electricty network around, it should also be possible to operate with solar and batteries.
+
+
+### Energiebedarf
+Stardot	12V * 0.5A  
+RasPi	 5V * 1A  
+
+### Solar
+#### Sonnenstunden
+https://www.wetter.de/klima/europa/deutschland-c49.html  
+https://de.statista.com/statistik/daten/studie/249925/umfrage/sonnenstunden-im-jahr-nach-bundeslaendern/  
+
+#### Emails Josef
+
+
+### Baterien
+
+### Sonstiger Schnickschnack
