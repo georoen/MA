@@ -7,7 +7,7 @@ Here we downloaded the latest [*Raspbian Jessie Lite*](https://www.raspberrypi.o
 
 ## Prepare SD-Card
 ### Write Raspbian image to card
-Write the iso-image on the SD-Card using [Ubuntu's USB-Creator](https://wiki.ubuntuusers.de/Live-USB/#USB-Creator-Startmedienersteller). 
+Write the iso-image on the SD-Card using [Ubuntu's USB-Creator](https://wiki.ubuntuusers.de/Live-USB/#USB-Creator-Startmedienersteller).
 
 ### Partitions
 [Partition SD Card](backing_up_sdcard_images)
@@ -21,10 +21,10 @@ Write the iso-image on the SD-Card using [Ubuntu's USB-Creator](https://wiki.ubu
 ## First boot
 ### connect via router (DCHP)
 See [how to use hostnames](https://unix.stackexchange.com/questions/16890/how-to-make-a-machine-accessible-from-the-lan-using-its-hostname)  
-`ssh pi@raspberrypi.local` 
+`ssh pi@raspberrypi.local`
 
 ### connected via cable
-**No access to router:**Connect Raspberry via Ethernet-cable directly to Ubuntu laptop.
+**No access to router:** Connect Raspberry via Ethernet-cable directly to Ubuntu laptop.
 Find out it's IP-Adress following [this guide](http://raspberrypi.stackexchange.com/a/61004):
 
 1. connect raspberry pi to laptop with Ethernet.
@@ -55,7 +55,7 @@ As seen with the failed Telekom-Hack the internet-of-things is tageted  by botne
 Next connect the RasPi to our local wifi, following [this documentation](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md). Than remove the ethernet cable.
 
 1. scan available networks: `sudo iwlist wlan0 scan`
-2. Append the network to the `wpa-supplicant` configuration file in nano: `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`. 
+2. Append the network to the `wpa-supplicant` configuration file in nano: `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`.
 ``
 network={  
     ssid="testing"  
