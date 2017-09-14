@@ -19,28 +19,24 @@ Optional: RGB+IR configuration. See EURAC archiv.zip
 ## [Raspberry Pi](./raspberry/README.md)
 Works: Static IP  
 Works: FTP Server  
-TODO: Configure Raspi Nr. 2
 
 
-## Setup 0 (Background)
+## Setup 0 (DEPRECATED)
 Stream images from public available [webcam](http://webcam.rockenstein.de/cam1g.jpg). Processing only.
 
 TODO: App script to GIT.  
 TODO: Strucutre data into new folder per month.
 
 ## [Setup 1](./1_setup/README.md)
-Camera with internet in field. Raspberry processing images remotely.  
+Camera with Internet in field and sending images to RaspberryPi processing images remotely.
 
-TODO w. Simon: Upload from Stardot into UniWue-network without VPN. Raspi inside University (FTP from outside without VPN, because stardot without openvpn)
 
 
 ## [Setup 2 (Active)](./2_setup/README.md)
-Autonomos setup without internet. Camera and raspberry in case, powersupply only. Collect data peridically (SD-Card / FTP in wlan0).  
+Works without Internet. Camera and raspberry placed in weatherproof enclosure, Needs power-supply only. Collect data periodically (SD-Card / FTP in wlan0).  
 
 Works: Static IP form stardot + raspi (via eth0, dhcp `raspberrypi.local` via wlan0).  
 Works: Configure cameras by port forwaring to `localhost:8080` when connecting via ssh.  
-Optional: [Platzsparendes LAN Kabel](https://www.conrad.de/de/rj45-netzwerk-anschlusskabel-cat-5e-sftp-050-m-grau-delock-1298118.html)? 1:1 verdahtet?
+Optional: [Platzsparendes LAN Kabel](https://www.conrad.de/de/rj45-netzwerk-anschlusskabel-cat-5e-sftp-050-m-grau-delock-1298118.html)?
 
-**TODO: Use realtimeclock**  
-**TODO: Use Solar-Power** Strombedarf? Welche 12V und MicroUSB Traffos?  
-Verbraucht RaspiCam weniger Strom?
+TODO: Use realtimeclock
