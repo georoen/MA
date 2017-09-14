@@ -1,6 +1,6 @@
 ![Logo](./extra/Sticker_UniWue-Scientific-Instrument.jpg)
 
-This git is part of a master degree project by Jeroen Staab. You can find the initial proposal (Deutsch) [here](./extra/STAAB_Proposal_AutomatisiertPassantenZählen.pdf).
+This git is part of the master degree project by Jeroen Staab. As long as the thesis is evaluated, you can find the initial proposal [here](./extra/STAAB_Proposal_AutomatisiertPassantenZählen.pdf).
 
 # Hardware
 
@@ -37,6 +37,6 @@ Works without Internet. Camera and raspberry placed in weatherproof enclosure, N
 
 Works: Static IP form stardot + raspi (via eth0, dhcp `raspberrypi.local` via wlan0).  
 Works: Configure cameras by port forwaring to `localhost:8080` when connecting via ssh.  
-Optional: [Platzsparendes LAN Kabel](https://www.conrad.de/de/rj45-netzwerk-anschlusskabel-cat-5e-sftp-050-m-grau-delock-1298118.html)?
+
 
 TODO: Use realtimeclock
