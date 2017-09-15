@@ -22,7 +22,7 @@ pandoc -s --latex-engine=lualatex -o docs_Hardware.pdf README.md
 
 echo 2 Setup
 cd ../2_setup
-pandoc -s --latex-engine=lualatex -o docs_Hardware.pdf README.md Solar.md
+pandoc -s --latex-engine=lualatex -o docs_Hardware.pdf README.md
 
 echo Merging...
 cd ../
