@@ -40,3 +40,8 @@ Works: Configure cameras by port forwaring to `localhost:8080` when connecting v
 
 
 TODO: Use realtimeclock
+
+
+
+## [Setup 3 (BETA)](./3_setup/README.md)
+Analise images instantly, in accordance to circumvent legal issues.
