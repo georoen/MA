@@ -6,7 +6,7 @@ url="http://webcam.rockenstein.de/cam1g.jpg"  # Wuecam
 #url="http://10.42.0.64/nph-jpeg.cgi"  # Stardot
 
 # Record Image from Source
-FILE=$cam_$(date +%Y%m%d-%H%M).jpg
+FILE=$cam_\$(date +%Y%m%d-%H%M).jpg
 wget -O $FILE $url  # Webcam
 #raspistill -o $FILE  # PiCam
 
