@@ -71,7 +71,7 @@ network={
 
 On Raspi-Side:
 ```
-ssh-keykeg
+ssh-keygen
 ```
 
 From Laptop:  
